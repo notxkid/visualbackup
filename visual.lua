@@ -308,7 +308,7 @@ do
 
     function Utility:Create(_Instance, Properties, Children)
         local Object = Instance.new(_Instance)
-	if Object:IsA("ScreenGui") then
+	if Object:IsA("ScreenGui") and syn then
 		syn.protect_gui(Object)
 	end
         local Properties = Properties or {}
