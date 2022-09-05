@@ -1030,9 +1030,7 @@ end
 
 function Library:LoadConfig(Name)
     if isfile(ConfigF..'/'..Name..'.json') then
-        Library:CreatePrompt('TwoButton', 'Load Config', 'Are you sure you want to load this config?', {
-            'Yes',
-            function()
+
                 local Config = readfile(ConfigF..'/'..Name..'.json')
                 local Table = HttpService:JSONDecode(Config)
                 for Index, Value in next, Table do
@@ -1051,11 +1049,6 @@ function Library:LoadConfig(Name)
                     end
                 end
                 Library:CreateNotification('Config Loaded', 'Successfully loaded your config with the name, \''..Name..'.json'..'\'.', 5)
-            end,
-            'No',
-            function()
-                Library:CreateNotification('Config Not Loaded', 'Config was not loaded.', 5)
-            end
         })
     else
         Library:CreateNotification('Config Not Loaded', 'Config doesn\'t exist.', 5)
