@@ -1049,7 +1049,7 @@ function Library:LoadConfig(Name)
                     end
                 end
                 Library:CreateNotification('Config Loaded', 'Successfully loaded your config with the name, \''..Name..'.json'..'\'.', 5)
-        })
+
     else
         Library:CreateNotification('Config Not Loaded', 'Config doesn\'t exist.', 5)
     end
